@@ -1,0 +1,21 @@
+{
+  "name": "playwright_fake_info_ts",
+  "version": "1.0.0",
+  "main": "index.js",
+
+  "scripts": {
+    "test": "npx playwright test",
+    "testChromium": "npx playwright test --project=chromium",
+    "testReport": "npx playwright test && npx playwright show-report",
+    "testUI": "npx playwright test --ui",
+    "codeGen": "npx playwright codegen"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "@types/node": "^24.7.0"
+  }
+}

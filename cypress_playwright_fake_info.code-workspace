@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "../cypress_fake_info"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
+}
