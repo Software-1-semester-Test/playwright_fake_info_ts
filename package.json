@@ -5,7 +5,7 @@
 
   "scripts": {
     "test": "npx playwright test",
-    "testChromium": "npx playwright test --project=chromium",
+    "testChromium": "npx playwright test --project chromium",
     "testReport": "npx playwright test && npx playwright show-report",
     "testUI": "npx playwright test --ui",
     "codeGen": "npx playwright codegen"

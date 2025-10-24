@@ -1,5 +1,4 @@
 import { expect, type Locator, type Page } from '@playwright/test';
-import { PersonDetails } from './PersonDetails';
 
 export class FakeInfoPage {
     readonly page: Page;
@@ -42,7 +41,10 @@ export class FakeInfoPage {
         await this.generateButton.click();
         await expect(this.output).toBeVisible();
         await expect(this.outputItem).toHaveCount(1);
-
+        const numOfParameters = visible.length + hidden.length;
+        if (numOfParameters !== 9) {
+            throw new Error('Total number of locators must be 10, actual is: ' + numOfParameters);
+        }
         for (const item of visible) {
             await expect(item).toBeVisible();
         }

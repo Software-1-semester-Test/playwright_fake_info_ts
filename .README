@@ -1,0 +1,6 @@
+UI and end-to-test made with Playwrite and typescript
+Only tests in fake_info.spec.ts should be run
+to run all end-to-end tests in three browsers use: npm run test 
+
+in badly_written test, there are tests that are commented. this is to show, how the tests gradually got more DRY
+in models

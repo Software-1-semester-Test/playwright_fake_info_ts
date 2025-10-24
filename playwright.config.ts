@@ -12,7 +12,9 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  //if one test is not finished in 10 seconds, it will timeout
   timeout: 10 * 1000,
+  //if all tests are not finished in 10 minutes, the suite will timeout
   globalTimeout: 10 * 60 * 1000,
   testDir: './tests',
   /* Run tests in files in parallel */
@@ -28,7 +30,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
-    baseURL: 'http://127.0.0.1:5500/index.html',
+    baseURL: 'http://127.0.0.1:5502/index.html',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on',
