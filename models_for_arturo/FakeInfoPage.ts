@@ -27,8 +27,9 @@ export class FakeInfoPage {
     }
 
     async selectPartialOption(value: string) {
-        // Helper to change dropdown selection
+        await this.partialRadio.check();
         await this.partialOptions.selectOption(value);
+        await this.generateButton.click();
     }
 
     async generatePersons(count: number) {
@@ -36,9 +37,7 @@ export class FakeInfoPage {
         await this.generateButton.click();
     }
     async checkPartialGeneration(visible: Locator[], hidden: Locator[], chosesOptions: string) {
-        await this.partialRadio.check();
         await this.selectPartialOption(chosesOptions);
-        await this.generateButton.click();
         await expect(this.output).toBeVisible();
         await expect(this.outputItem).toHaveCount(1);
         const numOfParameters = visible.length + hidden.length;

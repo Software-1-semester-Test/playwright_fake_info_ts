@@ -30,7 +30,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
-    baseURL: 'http://127.0.0.1:5502/index.html',
+    baseURL: 'http://127.0.0.1:5500/index.html',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on',
@@ -38,13 +38,16 @@ export default defineConfig({
     screenshot: 'only-on-failure',
     //browser dont show up when running tests use --headed in command line to see the browser
     headless: true,
+
+    //baceause i get Error: apiRequestContext.get: self-signed certificate
+    ignoreHTTPSErrors: true,
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome']},
+      use: { ...devices['Desktop Chrome'] },
     },
 
     {
